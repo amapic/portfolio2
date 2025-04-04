@@ -26,7 +26,7 @@ export default function FicheEntreprise() {
   const ref = useRef<HTMLInputElement>(null);
 
   function handleAccordionClick() {
-    console.log(!ref.current!.checked,ref.current!.checked);
+    // console.log(!ref.current!.checked,ref.current!.checked);
     ref.current!.checked = !ref.current!.checked;
   }
   const criteres: Critere[] = [

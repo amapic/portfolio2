@@ -43,7 +43,7 @@ export default function Nav() {
                 className="flex flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-colors duration-200 text-center align-middle"
               >
                 <span className="align-middle z-10 text-texteBlack">
-                  Accueil
+                  CV
                 </span>
               </Link>
               <Border rref={targetRef.current} />
@@ -58,7 +58,7 @@ export default function Nav() {
                 className="flex flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-colors duration-200 text-center align-middle"
               >
                 <span className="align-middle z-10 text-texteBlack">
-                  Accueil
+                  Linkedin
                 </span>
               </Link>
               <Border rref={targetRef2.current} />
@@ -73,7 +73,7 @@ export default function Nav() {
                 className="flex flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-colors duration-200 text-center align-middle"
               >
                 <span className="align-middle z-10 text-texteBlack">
-                  Accueil
+                  Github
                 </span>
               </Link>
               <Border rref={targetRef3.current} />

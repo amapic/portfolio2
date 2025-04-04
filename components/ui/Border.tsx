@@ -10,6 +10,7 @@ interface Props {
   cookie?: boolean;
   ttype?: string;
   seed?: number;
+  z?: number;
 }
 export default function Border({
   ttype = "",
@@ -18,9 +19,10 @@ export default function Border({
   cookie = false,
   rref,
   seed = 42,
+  z = 1,
 }: Props) {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  seed=seed*Math.random()
+  // seed=seed*Math.random()
   useEffect(() => {
     const updateDimensions = () => {
       if (rref) {
@@ -52,7 +54,7 @@ export default function Border({
   const { width, height } = dimensions;
 
   if (cookie) {
-    console.log(width, height);
+    // console.log(width, height);
   }
 
   // Fonction de pseudo-random basée sur une seed
@@ -96,7 +98,7 @@ export default function Border({
     <svg
       width="100%"
       height="100%"
-      className="absolute inset-0 text-red-500/20 fill-current h-full z-1"
+      className={`absolute inset-0 text-red-500/20 fill-current h-full z-${z}`}
     >
       <defs>
         <pattern

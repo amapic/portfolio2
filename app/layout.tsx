@@ -27,8 +27,10 @@ export default function RootLayout({
       fontFamily: myFont.style.fontFamily,
     }}
     >
-      <body className={`bg-white`}>
-        <Suspense fallback={<div>Loading...</div>}> <Nav /></Suspense>
+      <body className={`bg-beige`}
+      
+      >
+        {/* <Suspense fallback={<div>Loading...</div>}> <Nav /></Suspense> */}
        
         <main
           role="main"
@@ -37,8 +39,8 @@ export default function RootLayout({
         >
           {children}
         </main>
-        <ScrollToTop />
-        <Footer />
+        {/* <ScrollToTop /> */}
+        {/* <Footer /> */}
       </body>
     </html>
   );

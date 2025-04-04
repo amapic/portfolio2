@@ -36,10 +36,10 @@ export default function Hero() {
             <h2
               className={`text-texteBlack mt-10 text-balance text-5xl font-bold md:text-6xl xl:text-6xl`}
             >
-              Unlock My Data vous montre le bon côté du RGPD.
+              Amaury PICHAT 
             </h2>
             <p className="text-texteBlack text-body mt-8">
-              Récupérez vos données facilement.
+              Développeur front-end React et Next.js
               <br />
               Vous avez accès à différentes informations, comme une note
               d’accessibilité de vos données allant de 1 à 5. 5 étant la

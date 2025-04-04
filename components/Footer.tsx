@@ -4,7 +4,7 @@ import logo from "../public/logo.webp"
 
 export default function Footer() {
   return (
-    <footer role="contentinfo" className="pb-5">
+    <footer role="contentinfo" className="pb-5 bg-red-500">
       <Link prefetch={false} href={"/"}>
         <Image
           src={logo}
