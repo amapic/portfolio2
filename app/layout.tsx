@@ -2,7 +2,7 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
-import Nav from "@/components/Nav";
+import Nav from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import localFont from 'next/font/local'
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: "TODO",
 };
 
-const myFont = localFont({ src: './../fonts/Luciole/Luciole-Regular.ttf' })
+// const myFont = localFont({ src: './../fonts/Luciole/Luciole-Regular.ttf' })
 
 export default function RootLayout({
   children,
@@ -24,23 +24,21 @@ export default function RootLayout({
   return (
     <html lang="fr"
     style={{
-      fontFamily: myFont.style.fontFamily,
+      // fontFamily: myFont.style.fontFamily,
     }}
     >
-      <body className={`bg-beige`}
-      
-      >
+      {/* [#fff1e6 */}
+      <body className={`bg-beige `}>
         {/* <Suspense fallback={<div>Loading...</div>}> <Nav /></Suspense> */}
        
         <main
           role="main"
-          id="contenu-principal"
-          className={"flex flex-col mt-20"}
+          // id="contenu-principal"
+          // className={"flex flex-col mt-20"}
         >
           {children}
         </main>
-        {/* <ScrollToTop /> */}
-        {/* <Footer /> */}
+      
       </body>
     </html>
   );

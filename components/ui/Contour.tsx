@@ -3,6 +3,7 @@ import React, { forwardRef, useEffect, useState } from "react";
 
 const rosepale: string = "#f9e8e0";
 
+
 interface Props {
   rose?: boolean;
   icone?: boolean;
@@ -137,26 +138,7 @@ export default function Border({
         transform="translate(4, 4)"
         opacity="0.3"
       />
-      {/* )} */}
-      {!icone && !rose && (
-        <rect
-          width="30%"
-          height="30%"
-          transform="translate(10, 10)"
-          fill="url(#diagonalLines)"
-        />
-      )}
-      {/* //ajout pour image */}
-      {icone && !rose && (
-        <rect
-          width="70px"
-          height="70px"
-          transform={`translate(${XPointHautGauche + 4}, ${
-            YPointHautGauche + 4
-          })`}
-          fill="url(#diagonalLines)"
-        />
-      )}
+      
     </svg>
   );
 }

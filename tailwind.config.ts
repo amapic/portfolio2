@@ -21,6 +21,9 @@ const config: Config = {
         "white": "#FEFEFE",
         "brown": "#933B0F",
         "bgblue": "#0063C1",
+        "textFooter": "#8F7170",
+        "marron": "#393939",
+        "taupe": "#8a836f",
         primary: {
           50: '#E6F7F2',
           100: '#CCEFE5',

@@ -1,7 +1,7 @@
 "use client";
 import React, { forwardRef, useEffect, useState } from "react";
 
-const rosepale: string = "#f9e8e0";
+const rosepale: string = "#5C4033";
 
 interface Props {
   rose?: boolean;

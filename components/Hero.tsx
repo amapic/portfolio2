@@ -9,8 +9,9 @@ export default function Hero() {
   const ref = useRef(null);
   return (
     <>
-      <section id="hero" className="min-h-screen">
+      <section id="hero" className=" ">
         <ContainerHero>
+          
           <div className="bg-beige relative inset-x-0 right-6 mx-auto ml-auto mt-12 h-fit max-w-md [--ui-shadow-border:var(--ui-border-color)] lg:absolute lg:inset-y-16 lg:mr-0 lg:mt-0">
             <div className="absolute -inset-20 z-[1] bg-gradient-to-b from-white via-transparent to-white sm:-inset-40 dark:from-white dark:via-transparent dark:to-white"></div>
             <div className="absolute -inset-20 z-[1] bg-gradient-to-r from-white via-transparent to-white sm:-inset-40 dark:from-white dark:via-transparent dark:to-white"></div>
@@ -59,7 +60,7 @@ export default function Hero() {
             className="mt-4 relative w-1/2 mx-auto text-texteBlack inline-flex items-center justify-center bg-beige   z-50 pb-4 pt-3 px-8 text-2xl font-bold hover:bg-yellow/90 transition-colors duration-200 shadow-lg hover:shadow-xl"
           >
             <span className="z-20 text-center">
-              C'est parti ! je veux récupérer mes données
+              C'est parti ! Je veux avoir mon site !
             </span>
             <Border ttype="bouton" rref={ref.current} />
           </Link>

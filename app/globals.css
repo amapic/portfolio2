@@ -39,3 +39,21 @@
         min-height: 150vh;
     }
 }
+
+@font-face {
+    font-family: 'Luciole';
+    src: url('../fonts/Luciole/Luciole-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  /* Puis vous pouvez l'utiliser comme ceci */
+  :root {
+    font-family: 'Luciole', sans-serif;
+  }
+
+
+
+  .stroke-black {stroke:hsl(39, 100%, 89%); stroke-width: 2}
+  .stroke-black-2 {stroke:rgb(200, 173, 127); stroke-width: 2}
