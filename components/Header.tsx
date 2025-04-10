@@ -21,7 +21,7 @@ export default function Header() {
   }, [targetRef, targetRef2, targetRef3, targetRef4]);
 
   return (
-    <header className="bg-beige shadow-sm h-[20vh] w-full py-3 max-w-6xl mx-auto ">
+    <header className="bg-beige  h-[20vh] w-full py-3 max-w-6xl mx-auto ">
       <div className=" relative flex flex-row items-stretch justify-between max-w-6xl mx-auto">
         <Link href="/" className="flex items-center gap-2 w-1/2">
           <Image
@@ -35,7 +35,7 @@ export default function Header() {
           <ul className="flex  items-center  h-[10vh] w-full">
             <li
               ref={targetRef}
-              className="w-1/2 h-full relative text-center min-h-[10vh] flex items-center justify-center transform transition-transform duration-700 ease-in-out hover:scale-125 hover:duration-300 active:scale-95"
+              className="w-1/2 h-full relative text-center min-h-[10vh] flex items-center justify-center transform transition-transform duration-700 ease-in-out hover:scale-125 hover:duration-300"
             >
               <Link
                 href="/"
@@ -81,7 +81,7 @@ export default function Header() {
           </ul>
         </nav>
         {/* carre rose */}
-        <div className="hidden xl:block absolute right-0 top-0 translate-x-full ml-4 h-[20vh]">
+        <div className="hidden xl:block absolute right-0 top-0 translate-x-full ml-4 h-[15vh]">
           <div ref={targetRef4} className="w-[50px] h-full">
             <Border
               rref={targetRef4.current}

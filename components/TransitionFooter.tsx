@@ -1,11 +1,12 @@
 export default function TransitionFooter() {
   return (
-    <div className="flex flex-col items-center justify-center h-[40px] w-full">
+    <div className="flex flex-col items-center justify-center h-[40px] w-full z-10">
       <svg 
         width="100%" 
         height="40" 
         viewBox="0 0 300 40" 
         preserveAspectRatio="none"
+        className="z-10"
       >
         {/* Trapèze gauche - le plus foncé */}
         

@@ -9,41 +9,90 @@ export default function Hero() {
   const ref = useRef(null);
   return (
     <>
-      <section id="hero" className=" ">
+      <section id="hero" className="px-4 h-sm:mt-4">
         <ContainerHero>
-          
-          <div className="bg-beige relative inset-x-0 right-6 mx-auto ml-auto mt-12 h-fit max-w-md [--ui-shadow-border:var(--ui-border-color)] lg:absolute lg:inset-y-16 lg:mr-0 lg:mt-0">
-            <div className="absolute -inset-20 z-[1] bg-gradient-to-b from-white via-transparent to-white sm:-inset-40 dark:from-white dark:via-transparent dark:to-white"></div>
-            <div className="absolute -inset-20 z-[1] bg-gradient-to-r from-white via-transparent to-white sm:-inset-40 dark:from-white dark:via-transparent dark:to-white"></div>
-            <div
-              data-shade="glassy"
-              className="absolute -inset-20 bg-[linear-gradient(to_right,var(--ui-border-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--ui-border-color)_1px,transparent_1px)] bg-[size:24px_24px] [--ui-border-color:theme(colors.primary.200)] sm:-inset-40 dark:[--ui-border-color:theme(colors.primary.500/0.25)]"
-            ></div>
-            <div className="before:bg-ui before:tls-shadow-lg relative z-10 mt-4 before:rounded-card before:absolute before:inset-x-2 before:-bottom-1.5 before:top-0 before:shadow-gray-950/[0.03]">
-              <div className="tls-shadow bg-ui rounded-card relative overflow-hidden shadow-gray-950/[0.05]">
-                <Image
-                  src={datas_picture}
-                  alt="Illustration"
-                  className={`mx-auto transition-all duration-2000 ease-in-out transform`}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                  }}
+          <div
+            id="blacn"
+            className="lg:absolute rotate-1 lg:top-[2rem] lg:bottom-[80px]  lg:mt-0 lg:ml-[50%] lg:w-[calc(50%+50px)] bg-white   z-[50] relative inset-x-0 right-6 mx-auto ml-auto mt-12  "
+          >
+            {/* <div> */}
+              <svg 
+                width="100%" 
+                height="100%" 
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                {/* Définition du pattern */}
+                <defs>
+                  <pattern 
+                    id="stripes" 
+                    width="10" 
+                    height="10" 
+                    patternUnits="userSpaceOnUse"
+                    patternTransform="rotate(45)"
+                  >
+                    <line 
+                      x1="0" 
+                      y1="0" 
+                      x2="0" 
+                      y2="10" 
+                      stroke="#f9e8e0" 
+                      strokeWidth="10"
+                    />
+                  </pattern>
+                </defs>
+
+                {/* Rectangle avec le pattern */}
+                <rect
+                  x="0"
+                  y="0"
+                  width="100"
+                  height="100"
+                  fill="url(#stripes)"
                 />
-              </div>
-            </div>
+                {/* Cercle extérieur */}
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="40"
+                  fill="#d2402d"
+                  stroke="#d2402d"
+                  strokeWidth="2"
+                />
+
+                {/* Cercle du milieu */}
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="30"
+                  fill="#fff"
+                  stroke="#fff"
+                  strokeWidth="2"
+                />
+
+                {/* Cercle intérieur */}
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="15"
+                  fill="#d2402d"
+                  stroke="#d2402d"
+                  // strokeWidth="2"
+                />
+              </svg>
+            {/* </div> */}
           </div>
           <div className="relative z-10 mx-auto max-w-xl text-center lg:ml-0 lg:w-1/2 lg:text-left">
             <h2
               className={`text-texteBlack mt-10 text-balance text-5xl font-bold md:text-6xl xl:text-6xl`}
             >
-              Amaury PICHAT 
+              Amaury PICHAT
             </h2>
             <p className="text-texteBlack text-body mt-8">
               Développeur front-end React et Next.js
               <br />
               Vous avez accès à différentes informations, comme une note
-              d’accessibilité de vos données allant de 1 à 5. 5 étant la
+              d'accessibilité de vos données allant de 1 à 5. 5 étant la
               meilleure note. Ou les adresses mail et page du site pour accéder
               à vos données: les récupérer ou faire une demande de suppression.
               <br />
@@ -60,7 +109,7 @@ export default function Hero() {
             className="mt-4 relative w-1/2 mx-auto text-texteBlack inline-flex items-center justify-center bg-beige   z-50 pb-4 pt-3 px-8 text-2xl font-bold hover:bg-yellow/90 transition-colors duration-200 shadow-lg hover:shadow-xl"
           >
             <span className="z-20 text-center">
-              C'est parti ! Je veux avoir mon site !
+              Atteignez plus efficacement votre clientèle
             </span>
             <Border ttype="bouton" rref={ref.current} />
           </Link>

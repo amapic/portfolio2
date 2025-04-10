@@ -44,19 +44,18 @@ export default function Footer() {
 
   return (
     <footer
-      role="contentinfo"
-      className="flex justify-center bg-marron h-[200px] "
+      className="flex justify-center bg-marron h-[400px] md:h-[200px] "
     >
       <div
         ref={targetRef}
-        className="top-0  left-0 relative w-full  mx-auto h-full z-30 "
+        className="top-0  left-0 relative w-full  mx-auto h-full md:h-full z-30 "
       >
         <div className="absolute flex justify-center w-full mx-auto h-full">
           <div
             id="anchorciseau"
-            className=" w-[1000px] h-full py-3  mx-auto flex items-center justify-center pb-2"
+            className=" w-[1000px] h-full py-3  mx-auto flex flex-col md:flex-row items-center justify-center pb-2"
           >
-            <div className="relative w-[48%] flex text-beige h-full  flex-col items-center justify-center text-center z-30 border-2 border-beige border-dashed">
+            <div className="relative w-full h-[48%] md:w-[48%] flex text-beige md:h-full  flex-col items-center justify-center text-center z-30 border-2 border-beige border-dashed">
               {" "}
               <span className="text-beige inline-block   transition-transform duration-300 text-xl  underline">
                 Développement front-end
@@ -118,7 +117,7 @@ export default function Footer() {
                   />
                 </svg>
                 <span className="inline-flex items-center mr-1">
-                  Maj et maintenance
+                  Suivi et maintenance
                   {/* <span className="inline-block w-2 h-2 bg-beige rounded-full mx-2" /> */}
                 </span>
               </span>
@@ -138,8 +137,8 @@ export default function Footer() {
                 </svg> */}
               </div>
             </div>
-            <div className="w-[1%]"></div>
-            <div className="w-[48%] h-full text-beige flex flex-col  justify-center z-30 pb-2 border-2 border-beige border-dashed">
+            <div className="h-[2%] md:w-[1%]"></div>
+            <div className="h-[48%] w-full md:w-[48%] md:h-full text-beige flex flex-col  justify-center z-30 md:pb-2 border-2 border-beige border-dashed">
               <div className="flex items-center gap-2 pl-6">
                 <svg
                   width="20"

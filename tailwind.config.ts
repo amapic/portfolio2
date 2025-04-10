@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import daisyui from "daisyui"
+import daisyui from "daisyui";
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,48 +8,52 @@ const config: Config = {
   ],
   theme: {
     extend: {
-
       screens: {
-        "tablet": "500px"
+        tablet: "500px",
+        "h-sm": { raw: "(min-height: 640px)" },
+        "h-md": { raw: "(min-height: 768px)" },
+        "h-lg": { raw: "(min-height: 1024px)" },
+        "h-xl": { raw: "(min-height: 1280px)" },
+        "h-2xl": { raw: "(min-height: 1536px)" },
       },
       colors: {
-        "rosepale": "#f9e8e0",
-        "texteBlack": "#433231",
-        "beige": "#ffe5bd",
-        "rouge": "#d2402d",
-        "blue": "#342F83",
-        "white": "#FEFEFE",
-        "brown": "#933B0F",
-        "bgblue": "#0063C1",
-        "textFooter": "#8F7170",
-        "marron": "#393939",
-        "taupe": "#8a836f",
+        rosepale: "#f9e8e0",
+        texteBlack: "#433231",
+        beige: "#ffe5bd",
+        rouge: "#d2402d",
+        blue: "#342F83",
+        white: "#FEFEFE",
+        brown: "#933B0F",
+        bgblue: "#0063C1",
+        textFooter: "#8F7170",
+        marron: "#393939",
+        taupe: "#8a836f",
         primary: {
-          50: '#E6F7F2',
-          100: '#CCEFE5',
-          200: '#99DFD1',
-          300: '#66D0BC',
-          400: '#33C0A8',
-          500: '#08AA78',
-          600: '#08AA78',
-          700: '#08AA78',
-          800: '#08AA78',
-          900: '#08AA78',
-          "blue": "#342F83",
-          "white": "#FEFEFE",
-          "brown": "#933B0F"
+          50: "#E6F7F2",
+          100: "#CCEFE5",
+          200: "#99DFD1",
+          300: "#66D0BC",
+          400: "#33C0A8",
+          500: "#08AA78",
+          600: "#08AA78",
+          700: "#08AA78",
+          800: "#08AA78",
+          900: "#08AA78",
+          blue: "#342F83",
+          white: "#FEFEFE",
+          brown: "#933B0F",
         },
       },
-      
+
       maxWidth: {
-        '300': '300px',
-        '600': '37.5rem',
+        "300": "300px",
+        "600": "37.5rem",
       },
       minHeight: {
-        '550': '550px',
+        "550": "550px",
       },
       height: {
-        '560': '35rem',
+        "560": "35rem",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -57,16 +61,16 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       zIndex: {
-        "full": "9999",
+        full: "9999",
       },
       transitionDuration: {
         "2000": "2000ms",
       },
       borderWidth: {
-        "1": "1px"
+        "1": "1px",
       },
       animation: {
-        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) 1s"
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) 1s",
       },
     },
   },
