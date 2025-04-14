@@ -55,12 +55,12 @@ export default function Footer() {
             id="anchorciseau"
             className=" w-[1000px] h-full py-3  mx-auto flex flex-col md:flex-row items-center justify-center pb-2"
           >
-            <div className="relative w-full h-[48%] md:w-[48%] flex text-beige md:h-full  flex-col items-center justify-center text-center z-30 border-2 border-beige border-dashed">
+            <div className="relative w-full h-[48%] md:w-[48%] flex text-beige md:h-full  flex-col md:items-center justify-center  z-30 border-2 border-beige border-dashed">
               {" "}
-              <span className="text-beige inline-block   transition-transform duration-300 text-xl  underline">
-                Développement front-end
+              <span className="text-beige inline-block text-center   transition-transform duration-300 text-xl  underline">
+                Développement web
               </span>
-              <span className="text-beige inline-block  transition-transform duration-300 ">
+              <span className="text-beige  w-full pl-12 md:pl-0 md:text-center inline-block  transition-transform duration-300 ">
                 <svg
                   width="6"
                   height="6"
@@ -75,15 +75,15 @@ export default function Footer() {
                   />
                 </svg>
                 <span className="inline-flex items-center mr-1">
-                  Test{" "}
+                  Hébergement{" "}
                   {/* <span className="inline-block w-2 h-2 bg-beige rounded-full mx-2" /> */}
                 </span>
                 <span className="relative ">
-                  automatisé
+                  {/* automatisé */}
                   
                 </span>
               </span>
-              <span className="text-beige inline-block  transition-transform duration-300 ">
+              <span className="text-beige pl-12 md:pl-0 md:text-center inline-block  transition-transform duration-300 ">
               <svg
                   width="6"
                   height="6"
@@ -98,11 +98,11 @@ export default function Footer() {
                   />
                 </svg>
                 <span className="inline-flex items-center mr-1">
-                  Développement 3D{" "}
+                  Animation 3D{" "}
                   {/* <span className="inline-block w-2 h-2 bg-beige rounded-full mx-2" /> */}
                 </span>
               </span>
-              <span className="text-beige inline-block  transition-transform duration-300 ">
+              <span className="text-beige pl-12 md:pl-0 md:text-center inline-block  transition-transform duration-300 ">
               <svg
                   width="6"
                   height="6"
@@ -139,7 +139,7 @@ export default function Footer() {
             </div>
             <div className="h-[2%] md:w-[1%]"></div>
             <div className="h-[48%] w-full md:w-[48%] md:h-full text-beige flex flex-col  justify-center z-30 md:pb-2 border-2 border-beige border-dashed">
-              <div className="flex items-center gap-2 pl-6">
+              <div className="flex items-center pl-12 gap-2 md:pl-6">
                 <svg
                   width="20"
                   height="20"
@@ -156,7 +156,7 @@ export default function Footer() {
                 </svg>
                 <div>06 88 91 80 19</div>
               </div>
-              <div className="flex items-center gap-2 pl-6">
+              <div className="flex items-center  pl-12 gap-2 md:pl-6">
                 <svg
                   width="20"
                   height="20"
@@ -173,7 +173,7 @@ export default function Footer() {
                 </svg>
                 <div>Lyon</div>
               </div>
-              <div className="flex items-center gap-2 pl-6">
+              <div className="flex items-center pl-12 gap-2 md:pl-6">
                 <svg
                   width="20"
                   height="20"

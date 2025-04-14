@@ -6,11 +6,9 @@ export default function Background() {
         className="flex absolute justify-center inset-0 h-[480vh] overflow-hidden z-0 pointer-events-none"
       >
         <div
-          // id="coucou2"
           className=" overflow-hidden relative w-full flex justify-center inset-0 w-[1880px] left-0 top-0 h-full z-0"
         >
           <svg
-            // id="coucou"
             width="100%"
             height="100%"
             viewBox="0 0 1880 4492"
@@ -34,11 +32,11 @@ export default function Background() {
             viewBox="0 0 200 200"
           >
             <path
-              d="M 100 180 
+              d="M 98 180 
        L 95 85 
        Q 95 80 100 80 
        Q 105 80 105 85
-       L 100 180"
+       L 102 180"
               fill="#e5cca4"
             />
 

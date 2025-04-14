@@ -47,7 +47,7 @@ Côté serveur l'API est construit avec node.js"
           id="projet1"
           img="/pictures/sunflower.jpg"
           order={2}
-          technos ={["Three.js", "Rest API" ]}
+          technos ={["Three.js", "API REST" ]}
           url="https://amaurypichat.fr/slide/index.html"
         />
         <Projet1

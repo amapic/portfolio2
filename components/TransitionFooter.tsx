@@ -1,6 +1,6 @@
 export default function TransitionFooter() {
   return (
-    <div className="flex flex-col items-center justify-center h-[40px] w-full z-10">
+    <div className="flex flex-col items-center justify-center h-[20px]  lg:h-[40px] w-full z-10">
       <svg 
         width="100%" 
         height="40" 

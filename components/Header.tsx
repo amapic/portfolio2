@@ -21,21 +21,21 @@ export default function Header() {
   }, [targetRef, targetRef2, targetRef3, targetRef4]);
 
   return (
-    <header className="bg-beige  h-[20vh] w-full py-3 max-w-6xl mx-auto ">
-      <div className=" relative flex flex-row items-stretch justify-between max-w-6xl mx-auto">
-        <Link href="/" className="flex items-center gap-2 w-1/2">
+    <header className="bg-beige px-4 flex items-center h-[10vh] lg:h-[20vh] w-full py-3 max-w-6xl mx-auto ">
+      <div className="w-full h-full relative flex flex-row items-stretch justify-between max-w-6xl mx-auto">
+        {/* <Link href="/" className="flex items-center gap-2 w-1/2">
           <Image
             src={titre}
             unoptimized={true}
             alt={"logo Unlock My Data"}
           />
-        </Link>
-
-        <nav className=" min-h-[10vh] items-stretch hidden md:block w-full pl-6 align-stretch h-full">
-          <ul className="flex  items-center  h-[10vh] w-full">
+        </Link> */}
+        {/* pl-6 */}
+        <nav className=" min-h-[10vh] items-stretch  w-full  align-stretch h-full">
+          <ul className="flex  items-center justify-center  h-[10vh] w-full">
             <li
               ref={targetRef}
-              className="w-1/2 h-full relative text-center min-h-[10vh] flex items-center justify-center transform transition-transform duration-700 ease-in-out hover:scale-125 hover:duration-300"
+              className="w-[33%] h-full relative text-center min-h-[10vh] flex items-center justify-center"
             >
               <Link
                 href="/"
@@ -47,12 +47,12 @@ export default function Header() {
                   CV
                 </span>
               </Link>
-              <Border rref={targetRef.current} />
+              <Border plat={true} rref={targetRef.current} />
             </li>
 
             <li
               ref={targetRef2}
-              className="w-1/2 h-full relative text-center min-h-[10vh] flex items-center justify-center"
+              className="mx-2  w-[33%]  h-full relative text-center min-h-[10vh] flex items-center justify-center"
             >
               <div
                 className="flex w-full flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-colors duration-200"
@@ -61,12 +61,12 @@ export default function Header() {
                   Linkedin
                 </span>
               </div>
-              <Border rref={targetRef2.current} />
+              <Border plat={true} rref={targetRef2.current} />
             </li>
 
             <li
               ref={targetRef3}
-              className="w-1/2 h-full relative text-center min-h-[10vh] flex items-center justify-center"
+              className="w-[33%] h-full relative text-center min-h-[10vh] flex items-center justify-center"
             >
               <Link
                 href="/"
@@ -76,7 +76,7 @@ export default function Header() {
                   Github
                 </span>
               </Link>
-              <Border rref={targetRef3.current} />
+              <Border plat={true} rref={targetRef3.current} />
             </li>
           </ul>
         </nav>

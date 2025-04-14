@@ -43,7 +43,7 @@ export default function Hero({
     ['reactjs', 'react.png'],
     ['threejs', 'threejs.png'],
     ['webgl', 'webgl4.png'],
-    ['rest API', 'restapi.png'],
+    ['api rest', 'restapi.png'],
     // ... autres mappings
   ]);
   return (
@@ -51,7 +51,7 @@ export default function Hero({
       <section
         id={id}
         className={`relative md:h-[90vh] w-full h-full px-2 z-0 ${
-          order === 1 ? 'bg-beige' : 'bg-white'
+          order === 1 ? 'bg-beige' : 'bg-[#e5cca4]'
         } bg-transparent md:bg-transparent h-sm:mt-4`}
       >
         <div className="relative bg-transparent flex flex-col md:flex-row justify-center items-center w-full h-full z-0">
@@ -103,7 +103,7 @@ export default function Hero({
                     <div
                       key={techno}
                       ref={technoRef}
-                      className="relative shadow-md w-full p-3 pb-5 flex justify-left items-center z-20"
+                      className="relative shadow-md w-full p-3  flex justify-left items-center z-20"
                     >
                       <div className="md:text-xl flex items-start justify-left z-50">
                         <img
@@ -112,7 +112,7 @@ export default function Hero({
                           style={{ zIndex: 60 }}
                           className="w-10 h-10 ml-2"
                         />
-                        <p className="px-4">
+                        <p className="px-4 mt-2">
                           <span className="pl-4 flex-1 text-texteBlack">
                             {techno}
                           </span>

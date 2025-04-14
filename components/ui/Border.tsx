@@ -11,6 +11,7 @@ interface Props {
   ttype?: string;
   seed?: number;
   z?: number;
+  plat?:boolean
 }
 export default function Border({
   ttype = "",
@@ -20,6 +21,7 @@ export default function Border({
   rref,
   seed = 42,
   z = 1,
+  plat=false
 }: Props) {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   // seed=seed*Math.random()
@@ -65,15 +67,32 @@ export default function Border({
 
   // Génère les 4 points du quadrilatère
   // chacun a un angle et un rayon aléatoire autour d'une position centrale
-  const angle1 = seededRandom(seed + 1) * 2 * Math.PI;
-  const angle2 = seededRandom(seed + 2) * 2 * Math.PI;
-  const angle3 = seededRandom(seed + 3) * 2 * Math.PI;
-  const angle4 = seededRandom(seed + 4) * 2 * Math.PI;
+  
+  let angle1,angle2,angle3,angle4,rayon1,rayon2,rayon3,rayon4
+  
+  
+  if (!plat){
+  angle1 = seededRandom(seed + 1) * 2 * Math.PI;
+  angle2 = seededRandom(seed + 2) * 2 * Math.PI;
+  angle3 = seededRandom(seed + 3) * 2 * Math.PI;
+  angle4 = seededRandom(seed + 4) * 2 * Math.PI;
 
-  const rayon1 = seededRandom(seed + 5) * 10;
-  const rayon2 = seededRandom(seed + 6) * 10;
-  const rayon3 = seededRandom(seed + 7) * 10;
-  const rayon4 = seededRandom(seed + 8) * 10;
+  rayon1 = seededRandom(seed + 5) * 10;
+  rayon2 = seededRandom(seed + 6) * 10;
+  rayon3 = seededRandom(seed + 7) * 10;
+  rayon4 = seededRandom(seed + 8) * 10;
+  }else{
+  angle1 = 0;
+  angle2 = 0;
+  angle3 = 0;
+  angle4 = 0;
+
+  rayon1 = 0;
+  rayon2 = 0;
+  rayon3 = 0;
+  rayon4 = 0;
+
+  }
 
   const decalageWidth = cookie ? -10 : 5;
   const decalageHeight = cookie ? -10 : 5;
