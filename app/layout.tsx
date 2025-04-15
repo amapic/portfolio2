@@ -2,21 +2,13 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
-import Nav from "@/components/Header";
-import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
-import localFont from 'next/font/local'
-// import { Inter } from 'next/font/google'
- import { Suspense } from 'react'
-// // If loading a variable font, you don't need to specify the font weight
-// const inter = Inter({ subsets: ['latin'] })
+
 
 export const metadata: Metadata = {
-  title: "Unlock My Data",
+  title: "sites webs Amaury PICHAT",
   description: "TODO",
 };
 
-// const myFont = localFont({ src: './../fonts/Luciole/Luciole-Regular.ttf' })
 
 export default function RootLayout({
   children,
@@ -24,9 +16,22 @@ export default function RootLayout({
   return (
     <html lang="fr"
     style={{
-      // fontFamily: myFont.style.fontFamily,
     }}
     >
+      <head>
+        {/* Favicon de base */}
+        <link rel="icon" href="/caca.ico" />
+        
+        {/* Pour iOS */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Pour Android/Chrome */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        
+        {/* Manifest pour PWA */}
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       {/* [#fff1e6 */}
       <body className={`bg-beige `}>
         {/* <Suspense fallback={<div>Loading...</div>}> <Nav /></Suspense> */}

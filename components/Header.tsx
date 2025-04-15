@@ -23,14 +23,7 @@ export default function Header() {
   return (
     <header className="bg-beige px-4 flex items-center h-[10vh] lg:h-[20vh] w-full py-3 max-w-6xl mx-auto ">
       <div className="w-full h-full relative flex flex-row items-stretch justify-between max-w-6xl mx-auto">
-        {/* <Link href="/" className="flex items-center gap-2 w-1/2">
-          <Image
-            src={titre}
-            unoptimized={true}
-            alt={"logo Unlock My Data"}
-          />
-        </Link> */}
-        {/* pl-6 */}
+        
         <nav className=" min-h-[10vh] items-stretch  w-full  align-stretch h-full">
           <ul className="flex  items-center justify-center  h-[10vh] w-full">
             <li
@@ -42,7 +35,7 @@ export default function Header() {
                 className="flex w-full flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-all duration-700"
               >
                 <span 
-                  className="z-10 text-texteBlack inline-block whitespace-nowrap transform transition-transform duration-700 group-hover:scale-[0.8]"
+                  className="z-10 md:text-2xl text-texteBlack inline-block whitespace-nowrap transform transition-transform duration-700 group-hover:scale-[0.8]"
                 >
                   CV
                 </span>
@@ -57,7 +50,7 @@ export default function Header() {
               <div
                 className="flex w-full flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-colors duration-200"
               >
-                <span className="z-10 text-texteBlack">
+                <span className="md:text-2xl z-10 text-texteBlack">
                   Linkedin
                 </span>
               </div>
@@ -72,7 +65,7 @@ export default function Header() {
                 href="/"
                 className="flex w-full flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-colors duration-200"
               >
-                <span className="z-10 text-texteBlack">
+                <span className="md:text-2xl z-10 text-texteBlack">
                   Github
                 </span>
               </Link>

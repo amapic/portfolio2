@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import Hero from "@/components/Hero";
 
-import Projet1 from "@/components/Projet1";
+import Projet from "@/components/Projet";
 import Nav from "@/components/Header";
 import Footer from "@/components/Footer";
 // import Transition2 from "@/components/Transition2";
@@ -27,7 +27,7 @@ export default function Home() {
         <Nav />
         <Hero />
 
-        <Projet1
+        <Projet
           titre="Site Reactjs et Nextjs utilisant une API REST"
           description="Ce projet montre mes compétences en terme de construction d'API REST côté serveur et client
 Côté serveur l'API est construit avec node.js"
@@ -38,7 +38,7 @@ Côté serveur l'API est construit avec node.js"
           url="https://site-perso-exemple.vercel.app/"
         />
 
-        <Projet1
+        <Projet
           titre="Création d'un effet de profondeur sur une surface en 3D :"
           description="Techniquement poussé, ce projet m'a permis de maitriser des
                     techniques ambitieuses comme Three.js et WebGl. Le site
@@ -50,7 +50,7 @@ Côté serveur l'API est construit avec node.js"
           technos ={["Three.js", "API REST" ]}
           url="https://amaurypichat.fr/slide/index.html"
         />
-        <Projet1
+        <Projet
           titre="Site reactjs responsive"
           description="J'ai réalisé ce projet afin de valider mes compétences de base concernant React.js"
           id="projet2"
@@ -59,12 +59,9 @@ Côté serveur l'API est construit avec node.js"
           technos ={["Reactjs", "WebGL" ]}
           url="https://unclick-lac.vercel.app/"
         />
-        <Projet1
-          titre="Création d'un site entièrmement fait avec une animation de particule "
-          description="Techniquement poussé, ce projet m'a permis de maitriser des
-                    techniques ambitieuses comme Three.js et WebGl. Le site
-                    surprend l'internaute en donnant une impression de
-                    profondeur importante"
+        <Projet
+          titre="Animation de particules avec Three.js"
+          description="Des particules s'animent au fur et à mesure que l'utilisateur parcoure le site"
           id="projet2"
           order={2}
           img="/pictures/uconsulting.png"
@@ -72,12 +69,9 @@ Côté serveur l'API est construit avec node.js"
           url="https://amaurypichat.fr/slide/index.html"
         />
 
-       <Projet1
-          titre="Création d'un site entièremement fait avec une animation de particule"
-          description="Techniquement poussé, ce projet m'a permis de maitriser des
-                    techniques ambitieuses comme Three.js et WebGl. Le site
-                    surprend l'internaute en donnant une impression de
-                    profondeur importante"
+       <Projet
+          titre="Création d'un site corporate"
+          description="Des couleurs douces illustrent le site du groupe fictif Leonie créé pour l'occasion"
           id="projet2"
           order={1}
           img="/pictures/groupeleonie.png"

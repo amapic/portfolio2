@@ -32,7 +32,7 @@ export default function Container({
     const ref = useRef(null);
     return (
       <div className="overflow-hidden h-full">
-        <div ref={ref}  className="bg-red h-[70vh] relative mx-auto max-w-7xl px-6 py-4 lg:py-16 h-full">
+        <div ref={ref} id="oupsie"  className="bg-red h-[70vh] relative mx-auto max-w-[1200px] px-6 py-4 lg:py-16 h-full">
           <div className="flex-col flex lg:items-stretch justify-between lg:gap-12 h-full">{children}</div>
           {/* <div */}
           <Contour ttype="bouton" rref={ref.current}  />
