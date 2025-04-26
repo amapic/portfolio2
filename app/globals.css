@@ -71,3 +71,14 @@
         margin-top: 4rem;
     }
 }
+
+@media (max-height: 640px) {
+    .h-sm\:pt-2 {
+        padding-top: 2rem;
+    }
+
+    .h-sm-hidden {
+        display: none !important;
+    }
+}
+

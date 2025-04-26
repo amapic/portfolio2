@@ -12,6 +12,7 @@ export default function Hero({
   img,
   technos,
   url,
+  separateur = true,
 }: {
   titre: string;
   description: string;
@@ -20,6 +21,7 @@ export default function Hero({
   img: string;
   technos: string[];
   url: string;
+  separateur?: boolean;
 }) {
   const ref = useRef(null);
   const ref2 = useRef(null);
@@ -60,17 +62,14 @@ export default function Hero({
           >
             <div
               ref={ref}
-              //   href="/search"
               className="relative mx-auto bg-transparent text-texteBlack  z-10 pb-4 pt-3 px-8 text-2xl font-bold hover:bg-yellow/90 transition-colors duration-200 shadow-lg hover:shadow-xl"
             >
-              {/* <div className="relative"> */}
               <img
                 src={img}
                 alt="datas_picture"
                 className="relative z-50 p-2 rotate-1 hover:rotate-0 transition-transform duration-300"
               />
               <Cadre ttype="bouton" rref={ref.current} />
-              {/* </div> */}
             </div>
             <div
               ref={ref2}
@@ -81,7 +80,7 @@ export default function Hero({
                 href={url}
                 target="_blank"
               >
-                Visitez le site
+                Visiter le site
               </a>
               <Border ttype="bouton" rref={ref2.current} />
             </div>
@@ -89,10 +88,10 @@ export default function Hero({
           <div
             className={`order-1 md:${orderdivdroite} w-full md:w-1/2 p-2 h-full flex items-center justify-center`}
           >
-            <div className="flex flex-1 md:pb-12 items-center justify-around pb-10">
+            <div className="flex flex-1 md:pb-12  items-center justify-around pb-10 ">
               <div
                 ref={ref3}
-                className="relative h-full min-h-[450px] h-[70vh] md:h-[80vh] lg:py-24 lg:h-[60vh]  w-full mx-auto text-texteBlack flex flex-col  z-50   pt-3 px-8 text-2xl font-bold transition-colors duration-200 shadow-lg "
+                className="relative  h-full min-h-[450px] h-[70vh] md:h-[80vh] lg:py-12 xl:py-24  lg:h-[60vh]  w-full mx-auto text-texteBlack flex flex-col  z-50   pt-3 px-8 text-2xl font-bold transition-colors duration-200 shadow-lg "
               >
                 <div className="z-20 text-center mx-auto py-4 ">
                   <h3 className="pb-4 text-2xl lg:text-4xl ">{titre}</h3>
@@ -110,7 +109,7 @@ export default function Hero({
                       <div
                         key={techno}
                         ref={technoRef}
-                        className="relative shadow-md md:w-1/2 p-3  flex justify-left items-center z-20"
+                        className="relative shadow-md lg:w-1/2 p-3  flex justify-left items-center z-20"
                       >
                         <div className="md:text-xl flex items-start justify-left z-50 ">
                           <img
@@ -140,24 +139,25 @@ export default function Hero({
           </div>
         </div>
       </section>
-      <div className="h-[50px] my-8">
-        <div className="md:hidden absolute w-full  h-[50px] z-[60]">
-          <div className="relative w-full h-full ">
-            <svg
-              width="100%"
-              height="100%"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-            >
-              {/* <rect
+      {separateur && (
+        <div className="h-[50px] my-8">
+          <div className="md:hidden absolute w-full  h-[50px] z-[60]">
+            <div className="relative w-full h-full ">
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+              >
+                {/* <rect
                 x="0"
                 y="0"
                 width="100%"
                 height="100%"
                 fill="#d2402d"
               /> */}
-              <path 
-                  d="M 0 5 L 100 0 L 100 100 L 0 100 Z" 
+                <path
+                  d="M 0 5 L 100 0 L 100 100 L 0 100 Z"
                   fill="#e5cca4"
                   width="100%"
                   height="100%"
@@ -168,16 +168,18 @@ export default function Hero({
                   width="100%"
                   height="100%"
                 /> */}
-                <path 
-                  d="M 0 20L 100 25 L 100 80 L 0 75 Z" 
+                <path
+                  d="M 0 20L 100 25 L 100 80 L 0 75 Z"
                   fill="hsl(39, 100%, 89%)"
                   width="100%"
                   height="100%"
-                /> 
-            </svg>
+                />
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
+      )}
+      {!separateur && <div className="h-[50px] my-8"></div>}
     </>
   );
 }

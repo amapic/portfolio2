@@ -6,6 +6,7 @@ import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import Border from "./ui/Border";
 import Image from "next/image";
 import titre from "/public/titre.png";
+import { isMobile, isTablet, isBrowser } from "react-device-detect";
 
 export default function Header() {
   const targetRef = useRef<HTMLLIElement>(null);
@@ -15,15 +16,15 @@ export default function Header() {
 
   const [refsLoaded, setRefsLoaded] = useState<boolean>(false);
 
-
   useEffect(() => {
     setRefsLoaded(true);
   }, [targetRef, targetRef2, targetRef3, targetRef4]);
 
+  const [text, setText] = useState("Contact");
+  // const isTouchDevice = useIsTouchDevice();
   return (
     <header className="bg-beige px-4 flex items-center h-[10vh] lg:h-[20vh] w-full py-3 max-w-6xl mx-auto ">
       <div className="w-full h-full relative flex flex-row items-stretch justify-between max-w-6xl mx-auto">
-        
         <nav className=" min-h-[10vh] items-stretch  w-full  align-stretch h-full">
           <ul className="flex  items-center justify-center  h-[10vh] w-full">
             <li
@@ -32,12 +33,32 @@ export default function Header() {
             >
               <Link
                 href="/"
-                className="flex w-full flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-all duration-700"
+                className="flex group w-full flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-all duration-700"
               >
-                <span 
-                  className="z-10 md:text-2xl text-texteBlack inline-block whitespace-nowrap transform transition-transform duration-700 group-hover:scale-[0.8]"
+                <span
+                  className="hover-text  z-10 md:text-2xl text-texteBlack inline-block whitespace-nowrap transform transition-transform duration-700 "
+                  onMouseEnter={() => {
+                    if (isBrowser) {
+                      setText("amaurypichat@gmail.com");
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (isBrowser) {
+                      setText("Contact");
+                    }
+                  }}
+                  onClick={(e) => {
+                    if (isMobile || isTablet) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      window.scrollTo({
+                        top: document.documentElement.scrollHeight,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
                 >
-                  CV
+                  {text}
                 </span>
               </Link>
               <Border plat={true} rref={targetRef.current} />
@@ -47,12 +68,13 @@ export default function Header() {
               ref={targetRef2}
               className="mx-2  w-[33%]  h-full relative text-center min-h-[10vh] flex items-center justify-center"
             >
-              <div
-                className="flex w-full flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-colors duration-200"
-              >
-                <span className="md:text-2xl z-10 text-texteBlack">
+              <div className="flex w-full flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-colors duration-200">
+                <a
+                  href="https://www.linkedin.com/in/amaurypichat/"
+                  className="md:text-2xl z-10 text-texteBlack"
+                >
                   Linkedin
-                </span>
+                </a>
               </div>
               <Border plat={true} rref={targetRef2.current} />
             </li>
@@ -61,14 +83,14 @@ export default function Header() {
               ref={targetRef3}
               className="w-[33%] h-full relative text-center min-h-[10vh] flex items-center justify-center"
             >
-              <Link
-                href="/"
-                className="flex w-full flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-colors duration-200"
-              >
-                <span className="md:text-2xl z-10 text-texteBlack">
+              <div className="flex w-full flex-col items-center justify-center text-gray-600 hover:text-red-500 transition-colors duration-200">
+                <a
+                  href="https://github.com/amapic"
+                  className="md:text-2xl z-10 text-texteBlack"
+                >
                   Github
-                </span>
-              </Link>
+                </a>
+              </div>
               <Border plat={true} rref={targetRef3.current} />
             </li>
           </ul>
@@ -76,10 +98,7 @@ export default function Header() {
         {/* carre rose */}
         <div className="hidden xl:block absolute right-0 top-0 translate-x-full ml-4 h-[15vh]">
           <div ref={targetRef4} className="w-[50px] h-full">
-            <Border
-              rref={targetRef4.current}
-              rose={true}
-            />
+            <Border rref={targetRef4.current} rose={true} />
           </div>
         </div>
       </div>

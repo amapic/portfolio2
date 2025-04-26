@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, ReactDOM, useState } from "react";
 import Image from "next/image";
 import Container, { ContainerColumn } from "@/components/ui/Container";
-import Title from "@/components/ui/Title";
+// import Title from "@/components/ui/Title";
 import Border from "@/components/ui/Border";
 // import Container2 from "@/components/ui/Container2";
 export default function Transition1() {

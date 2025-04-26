@@ -44,11 +44,11 @@ export default function Footer() {
 
   return (
     <footer
-      className="flex justify-center bg-marron h-[400px] md:h-[200px] "
+      className="flex justify-center bg-marron h-[400px] md:h-[200px] z-[100]"
     >
       <div
         ref={targetRef}
-        className="top-0  left-0 relative w-full  mx-auto h-full md:h-full z-30 "
+        className="top-0  left-0 relative w-full  mx-auto h-full md:h-full z-[100] "
       >
         <div className="absolute flex justify-center w-full mx-auto h-full">
           <div
@@ -171,7 +171,7 @@ export default function Footer() {
                     d="M5 12h14M12 5l7 7-7 7"
                   />
                 </svg>
-                <div>Lyon</div>
+                <div>Lyon 6</div>
               </div>
               <div className="flex items-center pl-12 gap-2 md:pl-6">
                 <svg

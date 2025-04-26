@@ -1,0 +1,18 @@
+mettre en mode code
+ et précédé de Proposition d'ajout de ajout
+
+- vérifié twitter data et mettre x
+
+- rajouter page outils , permission c'est plus simple
+une page qui automatiserait tous les scripts que j'ai mis
+
+- page privé, faire les persmissions et tosdr
+
+- faire une page qui permet de créer un comparatifn ça serait un outil à moitié pour les développeurs,
+ça doit pondre un fichier 
+
+
+- 
+
+
+

@@ -9,11 +9,11 @@ export default function Hero() {
   const ref = useRef(null);
   return (
     <>
-      <section id="hero" className="h-[80vh] md:h-[70vh] px-4 mt-4 ">
+      <section id="hero" className="h-[80vh] md:h-[max(70vh,600px)] px-4 mt-4 ">
         <ContainerHero>
           <div
             id="blacn"
-            className="hidden lg:block lg:absolute rotate-1 lg:top-[2rem] lg:bottom-[80px]  lg:mt-0 lg:ml-[50%] lg:w-[calc(50%+50px)] bg-white   z-[50] relative inset-x-0 right-6 mx-auto ml-auto h-sm:mt-0 mt-12  "
+            className="hidden lg:block lg:absolute rotate-1 lg:top-[2rem] lg:bottom-[80px]  lg:mt-0 lg:ml-[50%] lg:w-[calc(50%+50px)] bg-white   z-[50] relative inset-x-0 right-6 mx-auto ml-auto h-sm:mt-0 mt-12"
           >
             {/* <div> */}
             <svg
@@ -76,7 +76,7 @@ export default function Hero() {
             </svg>
             {/* </div> */}
           </div>
-          <div className="w-[75%] h-[80%] lg:w-auto justify-around flex flex-col relative z-10  mx-auto  md:max-w-4xl text-center lg:ml-0  lg:text-left">
+          <div className="w-[75%] md:w-1/2 h-[80%] justify-around flex flex-col relative z-10  mx-auto  text-center lg:ml-0  lg:text-left">
             <div className="flex h-[100px] md:h-auto  items-center justify-center lg:items-start">
               <div className=" top-0 bg-red left-0 lg:hidden h-[100px] w-[100px] bg-white w-1/4">
                 <svg
@@ -145,7 +145,7 @@ export default function Hero() {
                 </svg>
               </div>
               <h2
-                className={`ml-4 md:ml-4 w-full text-center top-0 left-0 text-texteBlack mt-10 lg:mt-0 text-balance text-4xl font-bold md:text-5xl xl:text-6xl`}
+                className={`ml-4 md:ml-4 w-full text-center top-0 left-0 text-texteBlack mt-10 lg:mt-0 text-balance text-4xl font-bold md:text-5xl xl:text-6xl `}
               >
                 Amaury PICHAT
               </h2>
@@ -253,7 +253,7 @@ export default function Hero() {
                       fill="black"
                     />
                   </svg>
-                  Réalisation
+                  Prise de photos
                 </div>
                 <div className="flex items-center gap-2 md:text-2xl font-bold ">
                 <svg 
@@ -325,16 +325,15 @@ export default function Hero() {
             </div>
             
           </div>
-          <Link
+          <div
             ref={ref}
-            href="/search"
-            className="md:text-2xl mt-4 relative lg:w-1/2 mx-auto text-texteBlack inline-flex items-center justify-center bg-beige   z-50 pb-4 pt-3 px-8 text-2xl font-bold hover:bg-yellow/90 transition-colors duration-200 shadow-lg hover:shadow-xl"
+            className="md:text-2xl mt-4 relative lg:w-1/2 mx-auto text-texteBlack inline-flex items-center justify-center bg-beige   z-50 pb-4 pt-3 px-8 text-2xl font-bold hover:bg-yellow/90 transition-colors duration-200 shadow-lg"
           >
             <span className="z-20 text-center md:text-xl">
-              Atteignez plus efficacement votre clientèle
+              Atteignez plus efficacement vos prospects
             </span>
             <Border ttype="bouton" rref={ref.current} />
-          </Link>
+          </div>
           
         </ContainerHero>
       </section>
