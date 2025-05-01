@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import datas_picture from "/public/pictures/datas_picture.png";
+import datas_picture from "/public/pictures/datas_picture.webp";
 import { ContainerHero } from "@/components/ui/Container";
 import Border from "@/components/ui/Border";
 import { useRef } from "react";
@@ -183,7 +183,7 @@ export default function Hero() {
               </svg>
               <p className="relative underline decoration-2 underline-offset-4 p-4 md:p-0 md:ml-4  flex items-center justify-center gap-2 md:text-2xl  text-texteBlack md:my-8 font-bold relative z-10">
                 Développement de sites web
-                {/* <img src="/pictures/soulignage.png" alt="puce" className="absolute -bottom-4 w-full h-2 " /> */}
+                {/* <img src="/pictures/soulignage.webp" alt="puce" className="absolute -bottom-4 w-full h-2 " /> */}
               </p>
             </div>
             <div className="text-texteBlack text-body mt-8 mx-auto ">
@@ -330,7 +330,7 @@ export default function Hero() {
             className="md:text-2xl mt-4 relative lg:w-1/2 mx-auto text-texteBlack inline-flex items-center justify-center bg-beige   z-50 pb-4 pt-3 px-8 text-2xl font-bold hover:bg-yellow/90 transition-colors duration-200 shadow-lg"
           >
             <span className="z-20 text-center md:text-xl">
-              Atteignez plus efficacement vos prospects
+              Atteignez plus efficacement vos objectifs
             </span>
             <Border ttype="bouton" rref={ref.current} />
           </div>

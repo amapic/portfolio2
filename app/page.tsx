@@ -9,6 +9,7 @@ import Nav from "@/components/Header";
 import Footer from "@/components/Footer";
 import Background from "@/components/Background";
 import TransitionFooter from "@/components/TransitionFooter";
+import { isMobile, isTablet, isBrowser } from "react-device-detect";
 
 function FootPrint({ className, oula }: { className: string; oula?: any }) {
   return (
@@ -234,24 +235,31 @@ export default function Home() {
             inView15 ? "opacity-100" : "opacity-0"
           }`}
         />
-        <FootPrint oula={ref16} className={`absolute hidden xl:block h-sm-hidden top-[calc(189vh-30px)] left-[1825px] z-[100] scale-x-[0.25] -rotate-[84deg] scale-y-[-0.25] transition-opacity delay-[8200ms] duration-100 ${inView16 ? 'opacity-100' : 'opacity-0'}`} />
-
-        <Projet
-          titre="Mise en mouvement d'une surface en 3D"
-          description="Création d'un effet de profondeur original"
-          id="projet1"
-          img="/pictures/sunflower.jpg"
-          order={2}
-          technos={["Three.js", "API REST"]}
-          url="https://amaurypichat.fr/slide/index.html"
+        <FootPrint
+          oula={ref16}
+          className={`absolute hidden xl:block h-sm-hidden top-[calc(189vh-30px)] left-[1825px] z-[100] scale-x-[0.25] -rotate-[84deg] scale-y-[-0.25] transition-opacity delay-[8200ms] duration-100 ${
+            inView16 ? "opacity-100" : "opacity-0"
+          }`}
         />
+
+        {!isMobile && (
+          <Projet
+            titre="Mise en mouvement d'une surface en 3D"
+            description="Création d'un effet de profondeur original"
+            id="projet1"
+            img="sunflower.webp"
+            order={2}
+            technos={["Three.js", "API REST"]}
+            url="https://amaurypichat.fr/slide/index.html"
+          />
+        )}
 
         <Projet
           titre="Animation de particules"
           description="Des particules s'animent au fur et à mesure que l'utilisateur parcoure le site"
           id="projet2"
           order={2}
-          img="/pictures/uconsulting.png"
+          img="uconsulting.webp"
           technos={["Three.js", "WebGL"]}
           url="https://u-consulting.vercel.app/"
         />
@@ -261,26 +269,29 @@ export default function Home() {
           description="Des couleurs douces illustrent le site du groupe  Leonie"
           id="projet2"
           order={1}
-          img="/pictures/groupeleonie.png"
+          img="groupeleonie.webp"
           technos={["Three.js", "Reactjs"]}
           url="https://groupeleonie.vercel.app/"
         />
 
+        {!isMobile && (
         <Projet
           titre="Site utilisant une API REST"
           description="Canevas de site personnalisable"
           order={2}
           id="projet3"
-          img="/pictures/sitePersoAutomatique.png"
+          img="sitePersoAutomatique.webp"
           technos={["Reactjs", "API REST"]}
           url="https://site-perso-exemple.vercel.app/"
-        />
+          />
+        )}
+
         <Projet
           titre="Site reactjs responsive"
           description="Projet simple avec un design axé tech"
           id="projet2"
           order={1}
-          img="/pictures/unclick.png"
+          img="unclick.webp"
           technos={["Reactjs", "WebGL"]}
           url="https://unclick-lac.vercel.app/"
           separateur={false}

@@ -42,10 +42,10 @@ export default function Hero({
 
   // Map avec clés normalisées
   const technoToIcon = new Map([
-    ["reactjs", "react.png"],
-    ["threejs", "threejs.png"],
-    ["webgl", "webgl4.png"],
-    ["api rest", "restapi.png"],
+    ["reactjs", "react.webp"],
+    ["threejs", "threejs.webp"],
+    ["webgl", "webgl4.webp"],
+    ["api rest", "restapi.webp"],
     // ... autres mappings
   ]);
   return (
@@ -65,8 +65,18 @@ export default function Hero({
               className="relative mx-auto bg-transparent text-texteBlack  z-10 pb-4 pt-3 px-8 text-2xl font-bold hover:bg-yellow/90 transition-colors duration-200 shadow-lg hover:shadow-xl"
             >
               <img
-                src={img}
+                src={`/pictures/optimized/400/${img}`}
+                srcSet={`
+                  /pictures/optimized/400/${img} 400w,
+                  /pictures/optimized/800/${img} 800w,
+                  /pictures/optimized/1200/${img} 1200w
+                `}
+                sizes="(max-width: 400px) 400px,
+                       (max-width: 800px) 800px,
+                       1200px"
                 alt="datas_picture"
+                loading="lazy"
+                decoding="async"
                 className="relative z-50 p-2 rotate-1 hover:rotate-0 transition-transform duration-300"
               />
               <Cadre ttype="bouton" rref={ref.current} />
@@ -113,8 +123,15 @@ export default function Hero({
                       >
                         <div className="md:text-xl flex items-start justify-left z-50 ">
                           <img
-                            src={`/pictures/${icon}`}
+                            src={`/pictures/optimized/1200/${icon}`}
+                            srcSet={`
+                              /pictures/optimized/400/${icon} 400w,
+                              /pictures/optimized/800/${icon} 800w,
+                              /pictures/optimized/1200/${icon} 1200w
+                            `}
                             alt={techno}
+                            loading="lazy"
+                            decoding="async"
                             style={{ zIndex: 60 }}
                             className="w-10 h-10 ml-2"
                           />

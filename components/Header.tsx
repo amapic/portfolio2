@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import Border from "./ui/Border";
 import Image from "next/image";
-import titre from "/public/titre.png";
+import titre from "/public/titre.webp";
 import { isMobile, isTablet, isBrowser } from "react-device-detect";
 
 export default function Header() {

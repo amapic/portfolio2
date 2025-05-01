@@ -52,7 +52,7 @@ export default function Background() {
       </div>
       {/* <img
         id="cllef"
-        src="/pictures/clesable3.png"
+        src="/pictures/clesable3.webp"
         alt="background"
         className="absolute  w-[100px] h-[100px] top-0 left-0"
       /> */}
