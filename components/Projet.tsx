@@ -84,7 +84,7 @@ export default function Hero({
           <div
             className={`z-0 order-2 bg-transparent md:${orderdivgauche} w-full md:w-1/2 h-full flex flex-col justify-center items-center gap-4 p-2`}
           >
-            <div
+            {/* <div
               ref={ref}
               className=" relative mx-auto bg-transparent text-texteBlack z-10 pb-4 pt-3 px-8 text-2xl font-bold hover:bg-yellow/90 transition-colors duration-200 shadow-lg hover:shadow-xl bg-[url('/pictures/test.png')] bg-cover bg-center bg-no-repeat"
             >
@@ -105,6 +105,20 @@ export default function Hero({
                 className="relative z-50 p-2 rotate-1 hover:rotate-0 transition-transform duration-300"
               />
               {/* <Cadre ttype="bouton" rref={ref.current} />  */}
+            {/* </div>  */}
+            <div
+              ref={ref}
+              //   href="/search"
+              className="relative mx-auto bg-transparent text-texteBlack  z-10 pb-4 pt-3 px-8 text-2xl font-bold hover:bg-yellow/90 transition-colors duration-200 shadow-lg hover:shadow-xl"
+            >
+              {/* <div className="relative"> */}
+              <img
+                src={"/pictures/" + img}
+                alt="datas_picture"
+                className="relative z-50 p-2 rotate-1 hover:rotate-0 transition-transform duration-300"
+              />
+              <Cadre ttype="bouton" rref={ref.current} />
+              {/* </div> */}
             </div>
             <div
               ref={ref2}

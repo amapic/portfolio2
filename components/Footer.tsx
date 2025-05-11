@@ -205,7 +205,7 @@ export default function Footer() {
                     d="M5 12h14M12 5l7 7-7 7"
                   />
                 </svg>
-                <a href="/mentions-legales" className="text-beige">mentions-legales</a>
+                <a href="/mentions-legales.html" className="text-beige">mentions-legales</a>
               </div>
               <div className="flex items-center pl-12 gap-2 md:pl-6">
                 <svg
@@ -222,7 +222,7 @@ export default function Footer() {
                     d="M5 12h14M12 5l7 7-7 7"
                   />
                 </svg>
-                  <a href="/politique-de-confidentialite" className="text-beige">politique de confidentialité</a>
+                  <a href="/politique-de-confidentialite.html" className="text-beige">politique de confidentialité</a>
               </div>
             </div>
           </div>
