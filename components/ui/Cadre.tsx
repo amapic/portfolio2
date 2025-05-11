@@ -1,5 +1,6 @@
 "use client";
 import React, { forwardRef, useEffect, useState } from "react";
+// import { useShared } from "../Context/SharedContext";
 
 const rosepale: string = "#f9e8e0";
 
@@ -10,6 +11,7 @@ interface Props {
   cookie?: boolean;
   ttype?: string;
   seed?: number;
+  iid?: string;
 }
 
 export default function Cadre({
@@ -19,9 +21,11 @@ export default function Cadre({
   cookie = false,
   rref,
   seed = 42,
+  iid=""
 }: Props) {
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
     // seed=seed*Math.random()
+    // const { sharedValue, setSharedValue } = useShared();
     useEffect(() => {
       const updateDimensions = () => {
         if (rref) {
@@ -92,7 +96,9 @@ export default function Cadre({
   
     const XPointHautGauche = p1.substring(0, p1.indexOf(","));
     const YPointHautGauche = p1.substring(p1.indexOf(",") + 1, p1.length);
-  
+    // if (iid=="projet1") {
+    //   setSharedValue("coucou");
+    // }
     return (
       <svg
         width="100%"

@@ -3,13 +3,18 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Hero from "@/components/Hero";
-
-import Projet from "@/components/Projet";
+import dynamic from "next/dynamic";
 import Nav from "@/components/Header";
 import Footer from "@/components/Footer";
 import Background from "@/components/Background";
 import TransitionFooter from "@/components/TransitionFooter";
 import { isMobile, isTablet, isBrowser } from "react-device-detect";
+// import { SharedProvider } from "@/components/Context/SharedContext";
+
+const Projet = dynamic(() => import("@/components/Projet"), {
+  loading: () => <div>Loading...</div>,
+  ssr: true,
+});
 
 function FootPrint({ className, oula }: { className: string; oula?: any }) {
   return (
@@ -129,16 +134,18 @@ export default function Home() {
     setIsVisible(true);
   }, []);
   return (
-    <div className="relative overflow-hidden w-full">
-      <Background />
-      <div
-        id="relative overflow-x-hidden overflow-y-auto w-full flex flex-col bg-beige"
-        suppressHydrationWarning
-      >
-        <Nav />
-        <Hero />
+    // <SharedProvider>
+      <div className="relative overflow-hidden w-full">
+        <Background />
+        <div
+          id="relative overflow-x-hidden overflow-y-auto w-full flex flex-col bg-beige"
+          suppressHydrationWarning
+        >
+          {/* <Photo /> */}
+          <Nav />
+          <Hero />
 
-        <FootPrint
+          {/* <FootPrint
           oula={ref}
           className={`absolute hidden xl:block h-sm-hidden top-[168vh] left-[-50px] z-[100] scale-[0.25] rotate-90 transition-opacity delay-[700ms] duration-100 ${
             inView ? "opacity-100" : "opacity-0"
@@ -240,66 +247,67 @@ export default function Home() {
           className={`absolute hidden xl:block h-sm-hidden top-[calc(189vh-30px)] left-[1825px] z-[100] scale-x-[0.25] -rotate-[84deg] scale-y-[-0.25] transition-opacity delay-[8200ms] duration-100 ${
             inView16 ? "opacity-100" : "opacity-0"
           }`}
-        />
+        /> */}
 
-        {!isMobile && (
+          {!isMobile && (
+            <Projet
+              titre="Mise en mouvement d'une surface en 3D"
+              description="Création d'un effet de profondeur original"
+              id="projet1"
+              img="sunflower.webp"
+              order={2}
+              technos={["Three.js", "API REST"]}
+              url="https://amaurypichat.fr/slide/index.html"
+            />
+          )}
+
           <Projet
-            titre="Mise en mouvement d'une surface en 3D"
-            description="Création d'un effet de profondeur original"
-            id="projet1"
-            img="sunflower.webp"
+            titre="Animation de particules"
+            description="Des particules s'animent au fur et à mesure que l'utilisateur parcoure le site"
+            id="projet2"
             order={2}
-            technos={["Three.js", "API REST"]}
-            url="https://amaurypichat.fr/slide/index.html"
+            img="uconsulting.webp"
+            technos={["Three.js", "WebGL"]}
+            url="https://u-consulting.vercel.app/"
           />
-        )}
 
-        <Projet
-          titre="Animation de particules"
-          description="Des particules s'animent au fur et à mesure que l'utilisateur parcoure le site"
-          id="projet2"
-          order={2}
-          img="uconsulting.webp"
-          technos={["Three.js", "WebGL"]}
-          url="https://u-consulting.vercel.app/"
-        />
-
-        <Projet
-          titre="Création d'un site corporate"
-          description="Des couleurs douces illustrent le site du groupe  Leonie"
-          id="projet2"
-          order={1}
-          img="groupeleonie.webp"
-          technos={["Three.js", "Reactjs"]}
-          url="https://groupeleonie.vercel.app/"
-        />
-
-        {!isMobile && (
-        <Projet
-          titre="Site utilisant une API REST"
-          description="Canevas de site personnalisable"
-          order={2}
-          id="projet3"
-          img="sitePersoAutomatique.webp"
-          technos={["Reactjs", "API REST"]}
-          url="https://site-perso-exemple.vercel.app/"
+          <Projet
+            titre="Création d'un site corporate"
+            description="Des couleurs douces illustrent le site du groupe  Leonie"
+            id="projet2"
+            order={1}
+            img="groupeleonie.webp"
+            technos={["Three.js", "Reactjs"]}
+            url="https://groupeleonie.vercel.app/"
           />
-        )}
 
-        <Projet
-          titre="Site reactjs responsive"
-          description="Projet simple avec un design axé tech"
-          id="projet2"
-          order={1}
-          img="unclick.webp"
-          technos={["Reactjs", "WebGL"]}
-          url="https://unclick-lac.vercel.app/"
-          separateur={false}
-        />
+          {!isMobile && (
+            <Projet
+              titre="Site utilisant une API REST"
+              description="Canevas de site personnalisable"
+              order={2}
+              id="projet3"
+              img="sitePersoAutomatique.webp"
+              technos={["Reactjs", "API REST"]}
+              url="https://site-perso-exemple.vercel.app/"
+            />
+          )}
 
-        <TransitionFooter />
-        <Footer />
+          <Projet
+            titre="Site reactjs responsive"
+            description="Projet simple avec un design axé tech"
+            id="projet2"
+            order={1}
+            img="unclick.webp"
+            technos={["Reactjs", "WebGL"]}
+            url="https://unclick-lac.vercel.app/"
+            separateur={false}
+          />
+
+          <TransitionFooter />
+          <Footer />
+        </div>
       </div>
-    </div>
+    // </SharedProvider>
   );
 }

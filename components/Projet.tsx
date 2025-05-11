@@ -1,9 +1,32 @@
 "use client";
 
 import { useRef, createRef } from "react";
-import BorderCarre from "./ui/BorderCarre";
-import Border from "./ui/Border";
-import Cadre from "./ui/Cadre";
+import dynamic from "next/dynamic";
+import { useShared } from "./Context/SharedContext";
+// import BorderCarre from "./ui/BorderCarre";
+// import Border from "./ui/Border";
+// import Cadre from "./ui/Cadre";
+
+const Border = dynamic(() => import("./ui/Border"), {
+  loading: () => <div>Loading...</div>,
+  ssr: true
+});
+
+const BorderCarre = dynamic(() => import("./ui/BorderCarre"), {
+  loading: () => <div>Loading...</div>,
+  ssr: true
+});
+
+const Cadre = dynamic(() => import("./ui/Cadre"), {
+  loading: () => <div>Loading...</div>,
+  ssr: true
+});
+
+
+
+
+
+
 export default function Hero({
   titre,
   description,
@@ -23,6 +46,7 @@ export default function Hero({
   url: string;
   separateur?: boolean;
 }) {
+  // const { sharedValue } = useShared();
   const ref = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -62,7 +86,7 @@ export default function Hero({
           >
             <div
               ref={ref}
-              className="relative mx-auto bg-transparent text-texteBlack  z-10 pb-4 pt-3 px-8 text-2xl font-bold hover:bg-yellow/90 transition-colors duration-200 shadow-lg hover:shadow-xl"
+              className=" relative mx-auto bg-transparent text-texteBlack z-10 pb-4 pt-3 px-8 text-2xl font-bold hover:bg-yellow/90 transition-colors duration-200 shadow-lg hover:shadow-xl bg-[url('/pictures/test.png')] bg-cover bg-center bg-no-repeat"
             >
               <img
                 src={`/pictures/optimized/400/${img}`}
@@ -71,15 +95,16 @@ export default function Hero({
                   /pictures/optimized/800/${img} 800w,
                   /pictures/optimized/1200/${img} 1200w
                 `}
-                sizes="(max-width: 400px) 400px,
-                       (max-width: 800px) 800px,
-                       1200px"
+                // sizes="(max-width: 400px) 400px,
+                //        (max-width: 800px) 800px,
+                //        1200px"
+                sizes="100vw"
                 alt="datas_picture"
                 loading="lazy"
                 decoding="async"
                 className="relative z-50 p-2 rotate-1 hover:rotate-0 transition-transform duration-300"
               />
-              <Cadre ttype="bouton" rref={ref.current} />
+              {/* <Cadre ttype="bouton" rref={ref.current} />  */}
             </div>
             <div
               ref={ref2}
@@ -92,7 +117,7 @@ export default function Hero({
               >
                 Visiter le site
               </a>
-              <Border ttype="bouton" rref={ref2.current} />
+              <Border  ttype="bouton" rref={ref2.current} />
             </div>
           </div>
           <div
@@ -109,6 +134,7 @@ export default function Hero({
                 </div>
                 <h3 className="text-xl lg:text-3xl text-center mx-auto z-20 py-8 w-full ">
                   Technologies utilisées
+                  {/* <p>Valeur partagée : {sharedValue}</p> */}
                 </h3>
                 <div className="w-full h-full flex flex-col justify-center items-center">
                   {technos.map((techno, index) => {
@@ -150,7 +176,7 @@ export default function Hero({
                     );
                   })}
                 </div>
-                <Border ttype="projet" rref={ref3.current} />
+                <Border  ttype="projet" rref={ref3.current} />
               </div>
             </div>
           </div>

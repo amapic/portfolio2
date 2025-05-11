@@ -1,8 +1,8 @@
-import Link from "next/link";
-import Image from "next/image";
-import logo from "../public/logo.webp";
+// import Link from "next/link";
+// import Image from "next/image";
+// import logo from "../public/logo.webp";
 // import Border from "./ui/Border";
-import BorderFooter from "./ui/BorderFooter";
+// import BorderFooter from "./ui/BorderFooter";
 import { useLayoutEffect, useRef, useState, useEffect } from "react";
 
 export default function Footer() {
@@ -189,6 +189,40 @@ export default function Footer() {
                   />
                 </svg>
                 <div>amaury.pichat@gmail.com</div>
+              </div>
+              <div className="flex items-center mt-2 pl-12 gap-2 md:pl-6">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 12h14M12 5l7 7-7 7"
+                  />
+                </svg>
+                <a href="/mentions-legales" className="text-beige">mentions-legales</a>
+              </div>
+              <div className="flex items-center pl-12 gap-2 md:pl-6">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 12h14M12 5l7 7-7 7"
+                  />
+                </svg>
+                  <a href="/politique-de-confidentialite" className="text-beige">politique de confidentialité</a>
               </div>
             </div>
           </div>

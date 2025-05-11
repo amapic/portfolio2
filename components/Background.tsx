@@ -1,11 +1,14 @@
+import { isMobile } from "react-device-detect";
+
 export default function Background() {
   // 480vh pour 4492 de haut c'est ok
   return (
     <>
-      <div
-        id="backgorund3"
-        className="flex absolute justify-center inset-0 h-[609vh] overflow-hidden z-0 pointer-events-none"
-      >
+      {!isMobile && (
+        <div
+          id="background3"
+          className={`${isMobile ? "h-[609vh]" : "h-[609vh]"} flex absolute justify-center inset-0 overflow-hidden z-0 pointer-events-none`}
+        >
         <div
           className=" overflow-hidden relative w-full flex justify-center inset-0 w-[1880px] left-0 top-0 h-full z-0"
         >
@@ -25,50 +28,13 @@ export default function Background() {
               vectorEffect="non-scaling-stroke"
             />
           </svg>
-          {/* <svg
-            id="panneau"
-            className="rotate-3 absolute top-[3729px] left-[569px] overflow-hidden"
-            width="200"
-            height="200"
-            viewBox="0 0 200 200"
-          >
-            <path
-              d="M 98 180 
-       L 95 85 
-       Q 95 80 100 80 
-       Q 105 80 105 85
-       L 102 180"
-              fill="#e5cca4"
-            />
-
-            <path
-              d="M 50 90 L 150 90 L 100 40 Z"
-              fill="#fff5e6"
-              stroke="#f9e8e0"
-              strokeWidth="8"
-            />
-          </svg> */}
+          
         </div>
       </div>
-      {/* <img
-        id="cllef"
-        src="/pictures/clesable3.webp"
-        alt="background"
-        className="absolute  w-[100px] h-[100px] top-0 left-0"
-      /> */}
-
-      {/* </div> */}
+      )}
     </>
   );
 }
 
-{
-  /* <path
-            d="M 400 3756 C 227 3793 382 3868 279 4195 "
-            stroke="hsl(39, 100%, 89%)"
-            strokeWidth="20"
-            strokeDasharray="70 15"
-            fill="none"
-          />
-        </svg> */
-}
+
+

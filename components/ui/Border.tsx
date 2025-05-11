@@ -24,94 +24,82 @@ export default function Border({
   plat=false
 }: Props) {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  // seed=seed*Math.random()
+  const [points, setPoints] = useState({
+    p1: "0,0",
+    p2: "0,0",
+    p3: "0,0",
+    p4: "0,0",
+    XPointHautGauche: "0",
+    YPointHautGauche: "0"
+  });
+
   useEffect(() => {
-    const updateDimensions = () => {
+    const updateDimensionsAndPoints = () => {
       if (rref) {
-        setDimensions({
+        const newDimensions = {
           width: (rref as HTMLElement).clientWidth,
           height: (rref as HTMLElement).clientHeight
+        };
+        
+        const seededRandom = (seed: number) => {
+          const x = Math.sin(seed) * 10000;
+          return x - Math.floor(x);
+        };
+
+        let angle1, angle2, angle3, angle4, rayon1, rayon2, rayon3, rayon4;
+
+        if (!plat) {
+          angle1 = seededRandom(seed + 1) * 2 * Math.PI;
+          angle2 = seededRandom(seed + 2) * 2 * Math.PI;
+          angle3 = seededRandom(seed + 3) * 2 * Math.PI;
+          angle4 = seededRandom(seed + 4) * 2 * Math.PI;
+
+          rayon1 = seededRandom(seed + 5) * 10;
+          rayon2 = seededRandom(seed + 6) * 10;
+          rayon3 = seededRandom(seed + 7) * 10;
+          rayon4 = seededRandom(seed + 8) * 10;
+        } else {
+          angle1 = angle2 = angle3 = angle4 = 0;
+          rayon1 = rayon2 = rayon3 = rayon4 = 0;
+        }
+
+        const decalageWidth = cookie ? -10 : 5;
+        const decalageHeight = cookie ? -10 : 5;
+
+        const p1 = `${0 + rayon1 * Math.cos(angle1)},${0 + rayon1 * Math.sin(angle1)}`;
+        const p2 = `${newDimensions.width - decalageWidth + rayon2 * Math.cos(angle2)},${0 + rayon2 * Math.sin(angle2)}`;
+        const p3 = `${newDimensions.width - decalageHeight + rayon3 * Math.cos(angle3)},${newDimensions.height - 3 + rayon3 * Math.sin(angle3)}`;
+        const p4 = `${0 + rayon4 * Math.cos(angle4)},${newDimensions.height - 3 + rayon4 * Math.sin(angle4)}`;
+
+        const XPointHautGauche = p1.substring(0, p1.indexOf(","));
+        const YPointHautGauche = p1.substring(p1.indexOf(",") + 1, p1.length);
+
+        setDimensions(newDimensions);
+        setPoints({
+          p1,
+          p2,
+          p3,
+          p4,
+          XPointHautGauche,
+          YPointHautGauche
         });
       }
     };
 
-    // Initial measurement
-    updateDimensions();
-
-    // Add event listener
-    window.addEventListener('resize', updateDimensions);
-
-    // Cleanup
-    return () => window.removeEventListener('resize', updateDimensions);
-  }, [rref]);
-
- 
+    updateDimensionsAndPoints();
+    window.addEventListener('resize', updateDimensionsAndPoints);
+    return () => window.removeEventListener('resize', updateDimensionsAndPoints);
+  }, [rref, seed, plat, cookie]);
 
   if (!rref) {
     return null;
   }
-
- 
 
   const { width, height } = dimensions;
 
   if (cookie) {
     // console.log(width, height);
   }
-
-  // Fonction de pseudo-random basée sur une seed
-  const seededRandom = (seed: number) => {
-    const x = Math.sin(seed) * 10000;
-    return x - Math.floor(x);
-  };
-
-  // Génère les 4 points du quadrilatère
-  // chacun a un angle et un rayon aléatoire autour d'une position centrale
-  
-  let angle1,angle2,angle3,angle4,rayon1,rayon2,rayon3,rayon4
-  
-  
-  if (!plat){
-  angle1 = seededRandom(seed + 1) * 2 * Math.PI;
-  angle2 = seededRandom(seed + 2) * 2 * Math.PI;
-  angle3 = seededRandom(seed + 3) * 2 * Math.PI;
-  angle4 = seededRandom(seed + 4) * 2 * Math.PI;
-
-  rayon1 = seededRandom(seed + 5) * 10;
-  rayon2 = seededRandom(seed + 6) * 10;
-  rayon3 = seededRandom(seed + 7) * 10;
-  rayon4 = seededRandom(seed + 8) * 10;
-  }else{
-  angle1 = 0;
-  angle2 = 0;
-  angle3 = 0;
-  angle4 = 0;
-
-  rayon1 = 0;
-  rayon2 = 0;
-  rayon3 = 0;
-  rayon4 = 0;
-
-  }
-
-  const decalageWidth = cookie ? -10 : 5;
-  const decalageHeight = cookie ? -10 : 5;
-
-  const p1 = `${0 + rayon1 * Math.cos(angle1)},${
-    0 + rayon1 * Math.sin(angle1)
-  }`;
-  const p2 = `${dimensions.width - decalageWidth + rayon2 * Math.cos(angle2)},${
-    0 + rayon2 * Math.sin(angle2)
-  }`;
-  const p3 = `${dimensions.width - decalageHeight + rayon3 * Math.cos(angle3)},${
-    dimensions.height - 3 + rayon3 * Math.sin(angle3)
-  }`;
-  const p4 = `${0 + rayon4 * Math.cos(angle4)},${
-    dimensions.height - 3 + rayon4 * Math.sin(angle4)
-  }`;
-
-  const XPointHautGauche = p1.substring(0, p1.indexOf(","));
-  const YPointHautGauche = p1.substring(p1.indexOf(",") + 1, p1.length);
 
   return (
     <svg
@@ -132,7 +120,7 @@ export default function Border({
       </defs>
       {( ttype === "" || ttype === "projet") && (
         <polygon
-          points={`${p1} ${p2} ${p3} ${p4}`}
+          points={`${points.p1} ${points.p2} ${points.p3} ${points.p4}`}
           fill={rose ? rosepale : "#d2402d"}
           stroke={rose ? rosepale : "#d2402d"}
           strokeWidth="3"
@@ -141,7 +129,7 @@ export default function Border({
 
       {(ttype === "bouton" || ttype === "projet") && (
         <polygon
-          points={`${p1} ${p2} ${p3} ${p4}`}
+          points={`${points.p1} ${points.p2} ${points.p3} ${points.p4}`}
           fill={"#d2402d"}
           stroke={"#ffe5bd"}
           strokeWidth="3"
@@ -149,7 +137,7 @@ export default function Border({
       )}
       {/* {rose && ( */}
       <polygon
-        points={`${p1} ${p2} ${p3} ${p4}`}
+        points={`${points.p1} ${points.p2} ${points.p3} ${points.p4}`}
         fill="#ff634d"
         stroke="#ff634d"
         strokeWidth="3"
@@ -179,9 +167,7 @@ export default function Border({
         <rect
           width="70px"
           height="70px"
-          transform={`translate(${XPointHautGauche + 4}, ${
-            YPointHautGauche + 4
-          })`}
+          transform={`translate(${points.XPointHautGauche + 4}, ${points.YPointHautGauche + 4})`}
           fill="url(#diagonalLines)"
         />
       )}

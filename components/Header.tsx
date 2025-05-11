@@ -4,8 +4,8 @@ import Link from "next/link";
 // import Container from "./ui/Container";
 import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import Border from "./ui/Border";
-import Image from "next/image";
-import titre from "/public/titre.webp";
+// import Image from "next/image";
+// import titre from "/public/titre.webp";
 import { isMobile, isTablet, isBrowser } from "react-device-detect";
 
 export default function Header() {
